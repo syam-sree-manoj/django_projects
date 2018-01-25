@@ -1,0 +1,14 @@
+<h1>{{ author.author_name }}</h1>
+<ul>
+{% for n in author.news_db_set.all %}
+    <li>{{ n.news_text }}</li>
+{% endfor %}
+</ul>
+<form action = "results/" method="post" >
+    {% csrf_token %}
+    Author id:<br>
+    <input type="text" name="url_id" ><br>
+    Enter news text here:<br>
+    <input type="text" name="author_news" ><br><br>
+    <input type="submit" value="Submit">
+</form>

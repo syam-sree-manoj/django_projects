@@ -1,0 +1,12 @@
+{% if latest_news %}
+    <ul>
+    {% for n in latest_news %}
+    
+        <li><a href="{{n.id}}/">{{ n.auth_id }}</a><p> Author: {{ n.auth_id  }} </p>{{n.news_text}}</a></li><br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No news available.</p>
+{% endif %}
+
+  
